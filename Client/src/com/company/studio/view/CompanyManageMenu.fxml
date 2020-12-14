@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorInput?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="567.0" prefWidth="729.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.studio.controllers.CompanyManageMenuController">
+   <children>
+      <Pane fx:id="ButtonPane" prefHeight="580.0" prefWidth="143.0">
+         <children>
+            <ImageView fitHeight="585.0" fitWidth="140.0" layoutY="-1.0">
+               <image>
+                  <Image url="@../resource/img/left.png" />
+               </image>
+               <effect>
+                  <Lighting diffuseConstant="1.49" specularConstant="1.68" specularExponent="20.31" surfaceScale="0.0">
+                     <bumpInput>
+                        <Shadow height="76.59375" radius="38.7234375" width="80.3" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#e5beff" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ImageView>
+            <ImageView fx:id="BackButtonImage" fitHeight="40.0" fitWidth="40.0" layoutX="3.0" layoutY="8.0">
+               <image>
+                  <Image url="@../resource/img/backbutton.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="backButton" layoutX="3.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleClicks" opacity="0.0" prefHeight="40.0" prefWidth="40.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="8.0" layoutY="283.0">
+               <image>
+                  <Image url="@../resource/img/diagram.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="55.0" fitWidth="53.0" layoutX="5.0" layoutY="140.0">
+               <image>
+                  <Image url="@../resource/img/yesno.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="55.0" fitWidth="53.0" layoutX="5.0" layoutY="70.0">
+               <image>
+                  <Image url="@../resource/img/prod.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="9.0" layoutY="421.0">
+               <image>
+                  <Image url="@../resource/img/info.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="38.0" layoutX="11.0" layoutY="215.0">
+               <image>
+                  <Image url="@../resource/img/catl.png" />
+               </image>
+            </ImageView>
+            <Text fill="#3a0046" layoutX="64.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Управление продуктами" wrappingWidth="80.41537475585938">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#3a0046" layoutX="64.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Анализ рисков" wrappingWidth="80.41537475585938">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#3a0046" layoutX="64.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Каталог продуктов" wrappingWidth="80.41537475585938">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#3a0046" layoutX="64.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Результаты опроса" wrappingWidth="80.41537475585938">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#3a0046" layoutX="64.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Условия польз-ния" wrappingWidth="80.41537475585938">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#3a0046" layoutX="64.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Оценка рентаб-ти" wrappingWidth="62.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Button fx:id="CatalogButton" layoutY="210.0" mnemonicParsing="false" onAction="#handleClicks" opacity="0.2" prefHeight="55.0" prefWidth="140.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="GraphicButton" layoutY="278.0" mnemonicParsing="false" onAction="#handleClicks" opacity="0.2" prefHeight="55.0" prefWidth="140.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="ProductButton" layoutY="71.0" mnemonicParsing="false" onAction="#handleClicks" opacity="0.2" prefHeight="55.0" prefWidth="140.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="InfoButton" layoutX="4.0" layoutY="418.0" mnemonicParsing="false" onAction="#handleClicks" opacity="0.2" prefHeight="55.0" prefWidth="140.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="8.0" layoutY="352.0">
+               <image>
+                  <Image url="@../resource/img/rent.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="RentButton" layoutX="4.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleClicks" opacity="0.2" prefHeight="55.0" prefWidth="140.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="TaskButton" layoutY="140.0" mnemonicParsing="false" onAction="#handleClicks" opacity="0.2" prefHeight="55.0" prefWidth="140.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="51.0" layoutY="10.0">
+               <image>
+                  <Image url="@../resource/img/hidebutton.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="95.0" layoutY="10.0">
+               <image>
+                  <Image url="@../resource/img/exitbutton.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="hideButton" layoutX="51.0" layoutY="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="35.0" prefWidth="35.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="closeButton" layoutX="95.0" layoutY="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="35.0" prefWidth="35.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label fx:id="DateLabel" layoutX="21.0" layoutY="515.0" prefHeight="55.0" prefWidth="110.0" text="LabelForDate" textAlignment="CENTER">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <StackPane layoutX="139.0" prefHeight="577.0" prefWidth="627.0">
+         <children>
+            <ImageView fitHeight="577.0" fitWidth="637.0">
+               <image>
+                  <Image url="@../resource/img/right.png" />
+               </image>
+               <effect>
+                  <Lighting diffuseConstant="1.49" specularConstant="1.68" specularExponent="20.31" surfaceScale="0.0">
+                     <bumpInput>
+                        <Shadow height="65.475" radius="35.943749999999994" width="80.3" />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ffcdcd" />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ImageView>
+            <Pane fx:id="InfoPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="589.0" fitWidth="640.0" layoutY="-3.0">
+                     <image>
+                        <Image url="@../resource/img/right.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="1.49" specularConstant="1.68" specularExponent="20.31" surfaceScale="0.0">
+                           <bumpInput>
+                              <Shadow height="72.88749999999999" radius="37.796875" width="80.3" />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#ffe1e1" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="95.0" fitWidth="225.0" layoutX="210.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../resource/img/ramkablack.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="77.0" fitWidth="74.0" layoutX="232.0" layoutY="27.0">
+                     <image>
+                        <Image url="@../resource/img/info.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#4f005f" layoutX="312.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Условия пользования продуктом" wrappingWidth="108.376953125">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="Snow41" fitHeight="92.0" fitWidth="206.0" layoutX="220.0" layoutY="19.0">
+                     <image>
+                        <Image url="@../resource/img/winter.gif" />
+                     </image>
+                  </ImageView>
+                  <TextArea fx:id="paragraph" layoutX="59.0" layoutY="165.0" prefHeight="262.0" prefWidth="522.0" />
+                  <Button layoutX="98.0" layoutY="483.0" mnemonicParsing="false" onAction="#updateCompanyInfo" style="-fx-background-radius: 3; -fx-border-radius: 3; -fx-background-color: #FF5846;" text="update info" />
+               </children>
+            </Pane>
+            <Pane fx:id="GraphicPane" layoutY="-3.0" prefHeight="584.0" prefWidth="633.0">
+               <children>
+                  <ImageView fitHeight="589.0" fitWidth="640.0" layoutY="-3.0">
+                     <image>
+                        <Image url="@../resource/img/right.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="1.49" specularConstant="1.68" specularExponent="20.31" surfaceScale="0.0">
+                           <bumpInput>
+                              <Shadow height="72.88749999999999" radius="37.796875" width="80.3" />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#ffe1e1" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="95.0" fitWidth="225.0" layoutX="210.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../resource/img/ramkablack.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="77.0" fitWidth="74.0" layoutX="244.0" layoutY="32.0">
+                     <image>
+                        <Image url="@../resource/img/diagram.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#4f005f" layoutX="325.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Результаты опроса" wrappingWidth="95.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="Snow4" fitHeight="92.0" fitWidth="206.0" layoutX="220.0" layoutY="19.0">
+                     <image>
+                        <Image url="@../resource/img/winter.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ram2" fitHeight="262.0" fitWidth="255.0" layoutX="14.0" layoutY="259.0">
+                     <image>
+                        <Image url="@../resource/img/ramka.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ram1" fitHeight="228.0" fitWidth="345.0" layoutX="282.0" layoutY="117.0">
+                     <image>
+                        <Image url="@../resource/img/ramka.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ram3" fitHeight="200.0" fitWidth="280.0" layoutX="333.0" layoutY="356.0">
+                     <image>
+                        <Image url="@../resource/img/ramka.png" />
+                     </image>
+                  </ImageView>
+                  <PieChart fx:id="Pie1" layoutX="285.0" layoutY="117.0" legendSide="RIGHT" prefHeight="228.0" prefWidth="322.0" />
+                  <PieChart fx:id="Pie2" layoutX="14.0" layoutY="259.0" prefHeight="247.0" prefWidth="298.0" />
+                  <PieChart fx:id="Pie3" layoutX="344.0" layoutY="350.0" legendSide="LEFT" prefHeight="211.0" prefWidth="263.0" />
+                  <Text fx:id="question2" layoutX="20.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Возвратились бы еще?">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="question1" layoutX="295.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Устраивают ли пользователей цены?" wrappingWidth="337.56463623046875">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="question3" layoutX="353.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Посоветовали бы друзьям?">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="GetOprosButton" layoutX="184.0" layoutY="179.0" mnemonicParsing="false" prefHeight="254.0" prefWidth="255.0" textAlignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <ColorInput height="255.0" width="255.0">
+                           <paint>
+                              <LinearGradient endX="1.0" endY="0.7142857142857143">
+                                 <stops>
+                                    <Stop color="#fc0092" />
+                                    <Stop color="#fc0092" offset="0.08673469387755102" />
+                                    <Stop color="WHITE" offset="0.22448979591836726" />
+                                    <Stop color="#cb00fc" offset="0.3535469107551487" />
+                                    <Stop color="#fc00eb" offset="0.5434782608695652" />
+                                    <Stop color="WHITE" offset="0.7860411899313502" />
+                                    <Stop color="#fc0093" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </paint>
+                        </ColorInput>
+                     </effect></Button>
+                  <ImageView fx:id="Img1" fitHeight="200.0" fitWidth="200.0" layoutX="210.0" layoutY="210.0">
+                     <image>
+                        <Image url="@../resource/img/oprosim.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Img2" fitHeight="309.0" fitWidth="314.0" layoutX="155.0" layoutY="155.0">
+                     <image>
+                        <Image url="@../resource/img/ngramka.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Btn1" layoutX="178.0" layoutY="178.0" mnemonicParsing="false" onAction="#getOpros" opacity="0.0" prefHeight="262.0" prefWidth="270.0" text="Button">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fx:id="reloadImage" fitHeight="30.0" fitWidth="30.0" layoutX="20.0" layoutY="535.0">
+                     <image>
+                        <Image url="@../resource/img/reload.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="20.0" layoutY="535.0" mnemonicParsing="false" onAction="#getOpros" opacity="0.0" prefHeight="30.0" prefWidth="30.0" text="Button">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="CatalogPane" prefHeight="458.0" prefWidth="608.0">
+               <children>
+                  <ImageView fitHeight="589.0" fitWidth="640.0" layoutY="-3.0">
+                     <image>
+                        <Image url="@../resource/img/right.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="1.49" specularConstant="1.68" specularExponent="20.31" surfaceScale="0.0">
+                           <bumpInput>
+                              <Shadow height="72.88749999999999" radius="37.796875" width="80.3" />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#ffe1e1" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="95.0" fitWidth="225.0" layoutX="210.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../resource/img/ramkablack.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="222.0" layoutY="20.0">
+                     <image>
+                        <Image url="@../resource/img/statistic.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#4d005d" layoutX="317.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Каталог продуктов" wrappingWidth="95.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <TableView fx:id="TableProdToCatalog" layoutX="4.0" layoutY="119.0" opacity="0.8" prefHeight="151.0" prefWidth="452.0" style="-fx-border-color: #462B82; -fx-background-color: #FBF2F5; -fx-border-radius: 3; -fx-background-radius: 3;">
+                    <columns>
+                      <TableColumn fx:id="NameProdToCatalog" prefWidth="143.3333282470703" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Название" />
+                      <TableColumn fx:id="MaterialProdToCatalog" prefWidth="178.66668701171875" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Материал" />
+                        <TableColumn fx:id="Cost_PriceProdToCatalog" prefWidth="122.00009155273438" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Себестоимость, $" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <TextField fx:id="ProductSaleField" layoutX="464.0" layoutY="160.0" opacity="0.9" prefHeight="25.0" prefWidth="105.0" promptText="100" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 1;" />
+                  <Text layoutX="465.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавьте цену товара:" wrappingWidth="157.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="575.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <TableView fx:id="TableCatalog" layoutX="4.0" layoutY="364.0" opacity="0.8" prefHeight="211.0" prefWidth="630.0" style="-fx-border-color: #462B82; -fx-background-color: #FBF2F5; -fx-border-radius: 3; -fx-background-radius: 3;">
+                    <columns>
+                       <TableColumn fx:id="NumberProdInCatalog" prefWidth="35.333343505859375" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="№" />
+                       <TableColumn fx:id="NameProdInCatalog" prefWidth="155.33326721191406" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Название" />
+                      <TableColumn fx:id="MaterialProdInCatalog" prefWidth="218.00009155273438" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Материал" />
+                        <TableColumn fx:id="Cost_PriceProdInCatalog" prefWidth="111.3333740234375" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Себестоимость, $" />
+                        <TableColumn fx:id="Sale_ValueProdInCatalog" maxWidth="800.0" prefWidth="100.66668701171875" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Стоимость, $" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <Text layoutX="14.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Каталог товаров:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="searchInCatalogField" layoutX="9.0" layoutY="331.0" onAction="#searchInCatalog" opacity="0.9" promptText="🔎 Введите параметр поиска" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 1;" />
+                  <Button fx:id="AddtoTaskButton" layoutX="445.0" layoutY="304.0" mnemonicParsing="false" onAction="#addCatalogToTask" prefHeight="55.0" prefWidth="187.0" style="-fx-border-color: #C3C3FF; -fx-border-radius: 2; -fx-background-radius: 13; -fx-border-width: 4; -fx-background-color: #88FF75;" text="Добавить в задачу" textFill="#3d0040">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="addProdToCatalogButton" layoutX="465.0" layoutY="201.0" mnemonicParsing="false" onAction="#addProdToCatalog" prefHeight="55.0" prefWidth="165.0" style="-fx-border-color: #C3C3FF; -fx-border-radius: 2; -fx-background-radius: 13; -fx-border-width: 4; -fx-background-color: #88FF75;" text="В каталог" textFill="#3d0040">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="391.0" layoutY="310.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" style="-fx-background-radius: 11; -fx-border-radius: 6; -fx-background-color: #FF0000; -fx-border-width: 4; -fx-border-color: #011300;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="391.0" layoutY="310.0">
+                     <image>
+                        <Image url="@../resource/img/trash.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="DeleteCatalogButton" layoutX="391.0" layoutY="311.0" mnemonicParsing="false" onAction="#deleteCatalog" opacity="0.0" prefHeight="42.0" prefWidth="43.0" style="-fx-background-radius: 3; -fx-border-radius: 3; -fx-background-color: #FF5846;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fx:id="Snow1" fitHeight="91.0" fitWidth="206.0" layoutX="220.0" layoutY="19.0">
+                     <image>
+                        <Image url="@../resource/img/winter.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="TaskPane" prefHeight="458.0" prefWidth="617.0">
+               <children>
+                  <ImageView fitHeight="587.0" fitWidth="640.0" layoutY="-3.0">
+                     <image>
+                        <Image url="@../resource/img/right.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="1.49" specularConstant="1.68" specularExponent="20.31" surfaceScale="0.0">
+                           <bumpInput>
+                              <Shadow height="72.88749999999999" radius="37.796875" width="80.3" />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#ffe1e1" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="95.0" fitWidth="225.0" layoutX="210.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../resource/img/ramkablack.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="89.0" fitWidth="88.0" layoutX="231.0" layoutY="26.0">
+                     <image>
+                        <Image url="@../resource/img/yesno.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#480056" layoutX="335.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Анализ рисков" wrappingWidth="80.41537475585938">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="PrognozBlago" layoutX="15.0" layoutY="422.0" prefHeight="29.0" prefWidth="214.0" promptText="Прогноз благоприятный, %" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 1;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></TextField>
+                  <ImageView fitHeight="174.0" fitWidth="522.0" layoutX="5.0" layoutY="242.0" opacity="0.5">
+                     <image>
+                        <Image url="@../resource/img/ramka.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="157.0" fitWidth="499.0" layoutX="15.0" layoutY="250.0">
+                     <image>
+                        <Image url="@../resource/img/tabl1.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="45.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Прогноз фирмы">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="45.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Благоприятный">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="45.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неблагоприятный">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="296.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Фактически">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="210.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Благоприятный">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="360.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неблагоприятный">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="PrognozFirmyBlago" layoutX="195.0" layoutY="331.0" prefHeight="28.0" prefWidth="137.0" promptText="\%" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 2;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></TextField>
+                  <TextField fx:id="PrognozFirmyNeblago" layoutX="346.0" layoutY="371.0" prefHeight="28.0" prefWidth="157.0" promptText="\%" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 2;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></TextField>
+                  <TextField fx:id="AmountPr1" layoutX="530.0" layoutY="150.0" prefHeight="25.0" prefWidth="95.0" promptText="Количество" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 1;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></TextField>
+                  <TextField fx:id="AmountPr2" layoutX="530.0" layoutY="176.0" prefHeight="25.0" prefWidth="95.0" promptText="Количество" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 1;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></TextField>
+                  <TextField fx:id="AmountPr3" layoutX="530.0" layoutY="202.0" prefHeight="25.0" prefWidth="95.0" promptText="Количество" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 1;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></TextField>
+                  <TableView fx:id="TaskPrTable" layoutX="11.0" layoutY="127.0" opacity="0.8" prefHeight="106.0" prefWidth="513.0" style="-fx-border-color: #462B82; -fx-background-color: #FBF2F5; -fx-border-radius: 3; -fx-background-radius: 3;">
+                     <columns>
+                        <TableColumn fx:id="TaskPrNumber" prefWidth="40.0" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="№" />
+                        <TableColumn fx:id="TaskPrName" minWidth="0.0" prefWidth="83.33335876464844" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Продукт" />
+                        <TableColumn fx:id="TaskPrMaterial" minWidth="0.0" prefWidth="133.33331298828125" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Материал" />
+                        <TableColumn fx:id="TaskPrCost_Price" prefWidth="110.6666259765625" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Себестоимость, $" />
+                        <TableColumn fx:id="TaskPrSale_value" minWidth="0.0" prefWidth="140.0" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Стоимость продажи, $" />
+                     </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <TableView fx:id="ResultTable" layoutX="11.0" layoutY="472.0" opacity="0.8" prefHeight="95.0" prefWidth="488.0" style="-fx-border-color: #462B82; -fx-background-color: #FBF2F5; -fx-border-radius: 3; -fx-background-radius: 3;">
+                  <columns>
+                     <TableColumn fx:id="ResultPrNumber" prefWidth="40.0" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="№" />
+                     <TableColumn fx:id="ResultPrName" minWidth="0.0" prefWidth="66.00001525878906" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F;" text="Продукт" />
+                     <TableColumn fx:id="ResultPrMaterial" minWidth="0.0" prefWidth="112.66665649414062" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F;" text="Материал" />
+                     <TableColumn fx:id="ResultPrCost_Price" prefWidth="115.99993896484375" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Себестоимость, $" />
+                     <TableColumn fx:id="ResultPrSale_value" minWidth="0.0" prefWidth="150.00003051757812" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Стоимость продажи, $" />
+                  </columns>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </TableView>
+                  <Button fx:id="ResultButton" defaultButton="true" layoutX="249.0" layoutY="422.0" mnemonicParsing="false" onAction="#singleSolution" prefHeight="40.0" prefWidth="126.0" style="-fx-border-color: #C3C3FF; -fx-border-radius: 5; -fx-background-radius: 2; -fx-background-color: #88FF75;" text="Рассчитать" textFill="#3d0040">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button layoutX="556.0" layoutY="90.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="42.0" style="-fx-background-radius: 8; -fx-border-radius: 6; -fx-background-color: #FF0000; -fx-border-width: 3; -fx-border-color: #011300;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="556.0" layoutY="90.0">
+                     <image>
+                        <Image url="@../resource/img/trash.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="DeletePrButton" layoutX="556.0" layoutY="91.0" mnemonicParsing="false" onAction="#deleteCatalogFromTask" opacity="0.0" prefHeight="42.0" prefWidth="43.0" style="-fx-background-radius: 7; -fx-border-radius: 3; -fx-background-color: #FF5846;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Text fill="#320052" layoutX="500.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="При рынке:" wrappingWidth="81.80859375">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#320052" layoutX="500.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Благоприятном" wrappingWidth="125.00000000000011">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#320052" layoutX="500.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неблагоприятном" wrappingWidth="131.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#320052" layoutX="390.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Полученные результаты:" wrappingWidth="225.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="529.0" layoutY="295.0" mnemonicParsing="false" prefHeight="115.0" prefWidth="95.0" style="-fx-border-color: #C3C3FF; -fx-border-radius: 10; -fx-background-radius: 17; -fx-border-width: 7; -fx-background-color: #AEF100;" textFill="#3d0040">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="95.0" fitWidth="82.0" layoutX="536.0" layoutY="305.0">
+                     <image>
+                        <Image url="@../resource/img/drevo.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="TreeButton" layoutX="529.0" layoutY="295.0" mnemonicParsing="false" onAction="#SolutionTree" opacity="0.0" prefHeight="115.0" prefWidth="95.0" style="-fx-border-color: #C3C3FF; -fx-border-radius: 10; -fx-background-radius: 17; -fx-border-width: 7;" textFill="#3d0040">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="delAllFromTaskButton" layoutX="537.0" layoutY="234.0" mnemonicParsing="false" onAction="#delAllFromTask" prefHeight="32.0" prefWidth="82.0" style="-fx-border-color: #C3C3FF; -fx-border-radius: 10; -fx-background-radius: 12; -fx-border-width: 1; -fx-background-color: FF55AF;" text="Очистить" textFill="#3d0040">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <ImageView fx:id="Snow2" fitHeight="89.0" fitWidth="204.0" layoutX="221.0" layoutY="20.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../resource/img/winter.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="ProductPane" prefHeight="567.0" prefWidth="614.0">
+               <children>
+                  <ImageView fitHeight="589.0" fitWidth="640.0" layoutY="-3.0">
+                     <image>
+                        <Image url="@../resource/img/right.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="1.49" specularConstant="1.68" specularExponent="20.31" surfaceScale="0.0">
+                           <bumpInput>
+                              <Shadow height="76.59375" radius="38.7234375" width="80.3" />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#ffe1e1" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <TableView fx:id="Table_Products" layoutX="5.0" layoutY="226.0" opacity="0.8" prefHeight="338.0" prefWidth="612.0" style="-fx-border-color: #462B82; -fx-background-color: #FBF2F5; -fx-border-radius: 3; -fx-background-radius: 3;">
+                    <columns>
+                      <TableColumn fx:id="Number_Product" prefWidth="40.0" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="№" />
+                      <TableColumn fx:id="ProductName" minWidth="0.0" prefWidth="148.6666259765625" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Продукт" />
+                        <TableColumn fx:id="Material" minWidth="0.0" prefWidth="248.66671752929688" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Материал" />
+                        <TableColumn fx:id="Cost_Price" prefWidth="161.3333740234375" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Себестоимость, $" />
+                    </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TableView>
+                  <TextField fx:id="productName_field" layoutX="5.0" layoutY="134.0" prefHeight="29.0" prefWidth="200.0" promptText="Название" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 2;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <TextField fx:id="MaterialField" layoutX="207.0" layoutY="134.0" prefHeight="29.0" prefWidth="241.0" promptText="Материал" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 2;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <ImageView fitHeight="77.0" fitWidth="74.0" layoutX="229.0" layoutY="26.0">
+                     <image>
+                        <Image url="@../resource/img/prod.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#4a0058" layoutX="309.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Управление продуктами" wrappingWidth="105.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="CostPriceField" layoutX="450.0" layoutY="134.0" prefHeight="29.0" prefWidth="127.0" promptText="Себестоимость" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 2;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <TextField fx:id="searchPrField" layoutX="5.0" layoutY="190.0" onAction="#searchProduct" prefHeight="25.0" prefWidth="194.0" promptText="🔎 Введите параметр поиска" style="-fx-border-color: #FF6BBC; -fx-border-radius: 2; -fx-background-radius: 2; -fx-background-color: #FFECF6; -fx-border-width: 2;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Button layoutX="580.0" layoutY="127.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: #4FFF46; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-width: 3; -fx-border-color: #A6236A;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="580.0" layoutY="127.0">
+                     <image>
+                        <Image url="@../resource/img/Addbutton.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Button fx:id="AddProductButton" layoutX="580.0" layoutY="127.0" mnemonicParsing="false" onAction="#addProduct" opacity="0.0" prefHeight="43.0" prefWidth="43.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="580.0" layoutY="176.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" style="-fx-background-radius: 11; -fx-border-radius: 6; -fx-background-color: #FF0000; -fx-border-width: 4; -fx-border-color: #011300;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="580.0" layoutY="176.0">
+                     <image>
+                        <Image url="@../resource/img/trash.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="DeleteProductButton" layoutX="580.0" layoutY="177.0" mnemonicParsing="false" onAction="#deleteProduct" opacity="0.0" prefHeight="42.0" prefWidth="43.0" style="-fx-background-radius: 3; -fx-border-radius: 3; -fx-background-color: #FF5846;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="95.0" fitWidth="225.0" layoutX="210.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../resource/img/ramkablack.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Snow3" fitHeight="90.0" fitWidth="206.0" layoutX="220.0" layoutY="20.0">
+                     <image>
+                        <Image url="@../resource/img/winter.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="RentPane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="589.0" fitWidth="640.0" layoutY="-3.0">
+                     <image>
+                        <Image url="@../resource/img/right.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="1.49" specularConstant="1.68" specularExponent="20.31" surfaceScale="0.0">
+                           <bumpInput>
+                              <Shadow height="76.59375" radius="38.7234375" width="80.3" />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant color="#eee1e1" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="95.0" fitWidth="225.0" layoutX="210.0" layoutY="17.0">
+                     <image>
+                        <Image url="@../resource/img/ramkablack.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="67.0" fitWidth="62.0" layoutX="227.0" layoutY="30.0">
+                     <image>
+                        <Image url="@../resource/img/rent.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#4f005f" layoutX="294.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Оценка рентабельности" wrappingWidth="126.99999999999989">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="Snow411" fitHeight="92.0" fitWidth="206.0" layoutX="220.0" layoutY="19.0">
+                     <image>
+                        <Image url="@../resource/img/winter.gif" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="164.0" layoutY="310.0" mnemonicParsing="false" onAction="#getRentResult" style="-fx-background-radius: 3; -fx-border-radius: 3; -fx-background-color: #FF5846;" text="Рассчитать">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <VBox layoutX="14.0" layoutY="122.0" prefHeight="200.0" prefWidth="241.0">
+                     <children>
+                        <TextField fx:id="firstKvIncome" prefHeight="45.0" prefWidth="125.0" promptText="Доходы за 1 квартал">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <InnerShadow color="#ff4848" />
+                           </effect></TextField>
+                        <TextField fx:id="secondKvIncome" prefHeight="45.0" prefWidth="125.0" promptText="Доходы за 2 квартал">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <InnerShadow color="#ff4848" />
+                           </effect></TextField>
+                        <TextField fx:id="thirdKvIncome" prefHeight="45.0" prefWidth="125.0" promptText="Доходы за 3 квартал">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <InnerShadow color="#ff4848" />
+                           </effect></TextField>
+                        <TextField fx:id="fourthKvIncome" prefHeight="45.0" prefWidth="125.0" promptText="Доходы за 4 квартал">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <InnerShadow color="#ff4848" />
+                           </effect></TextField>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </VBox>
+                  <VBox layoutX="254.0" layoutY="122.0" prefHeight="200.0" prefWidth="241.0">
+                     <children>
+                        <TextField fx:id="firstKvExpences" prefHeight="45.0" prefWidth="100.0" promptText="Расходы за 1 квартал">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <InnerShadow color="#ff4848" />
+                           </effect></TextField>
+                        <TextField fx:id="secondKvExpences" prefHeight="45.0" prefWidth="121.0" promptText="Расходы за 2 квартал">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <InnerShadow color="#ff4848" />
+                           </effect></TextField>
+                        <TextField fx:id="thirdKvExpences" prefHeight="45.0" prefWidth="100.0" promptText="Расходы за 3 квартал">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <InnerShadow color="#ff4848" />
+                           </effect></TextField>
+                        <TextField fx:id="fourthKvExpences" prefHeight="45.0" prefWidth="100.0" promptText="Расходы за 4 квартал">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <InnerShadow color="#ff4848" />
+                           </effect></TextField>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </VBox>
+                  <TextField fx:id="year" layoutX="28.0" layoutY="310.0" prefHeight="20.0" prefWidth="82.0" promptText="Год" />
+                  <TableView fx:id="stat_table" layoutX="14.0" layoutY="349.0" prefHeight="200.0" prefWidth="255.0">
+                    <columns>
+                      <TableColumn fx:id="year_column" prefWidth="44.0" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Год" />
+                      <TableColumn fx:id="revenue_column" prefWidth="55.999969482421875" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Доходы" />
+                        <TableColumn fx:id="expenses_column" prefWidth="75.33328247070312" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Расходы" />
+                        <TableColumn fx:id="profit_column" prefWidth="75.33328247070312" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F; -fx-alignment: CENTER;" text="Прибыль" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="542.0" layoutY="132.0" mnemonicParsing="false" onAction="#buildGraph" style="-fx-background-color: #F98B8B;" text="График">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

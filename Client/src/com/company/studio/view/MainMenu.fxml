@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.studio.controllers.MainMenuController">
+   <children>
+      <ImageView fx:id="BackgroundImage" blendMode="SRC_ATOP" fitHeight="467.0" fitWidth="601.0" layoutX="2.0" opacity="0.55">
+         <image>
+            <Image url="@../resource/img/fon.png" />
+         </image>
+         <effect>
+            <Lighting diffuseConstant="1.49" specularConstant="1.68" specularExponent="20.31" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow color="#2743ab" height="76.5925" radius="38.723124999999996" width="80.3" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffe2e2" />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fx:id="SmallFon" fitHeight="206.0" fitWidth="167.0" layoutX="415.0" layoutY="118.0" opacity="0.7">
+         <image>
+            <Image url="@../resource/img/ramka.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="winter" fitHeight="467.0" fitWidth="603.0" opacity="0.5" pickOnBounds="true">
+         <image>
+            <Image url="@../resource/img/winter.gif" />
+         </image>
+      </ImageView>
+      <Text fx:id="AboutCompany" layoutX="14.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POETÍC - производитель женской одежды, предлагает на международном рынке широкий ассортимент текстильной продукции: одежду для взрослых и модные аксессуары. Бренд POETÍC был создан Massímo Coccodríllo (Максим Крокодил), дизайнером-самоучкой, увлеченным всем, что связано с искусством, и особенно модой. Вся его одежда, которую отличает безупречный и утонченный крой, изготовлена в Италии из благородных материалов высокого качества. Он превратил свое Ателье в лабораторию, где, как исследователь, испытывает новые методы конструирования одежды. Неожиданные сочетания разнородных материалов, вышивка и ручная роспись стали знаковыми кодами POETÍC. Дизайнер является новатором в работе с кожей ската - материалом, обладающим рядом исключительных и даже уникальных свойств, который до этого использовался только мастерами, изготавливающими кожгалантерею. В дополнение к своим коллекциям Дом моды POETÍC предлагает уникальные предметы одежды из редких материалов, которые изготавливаются исключительно на заказ." textAlignment="CENTER" wrappingWidth="384.1366271972656">
+         <font>
+            <Font name="Monotype Corsiva" size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="signInButton" alignment="TOP_CENTER" defaultButton="true" layoutX="475.0" layoutY="194.0" mnemonicParsing="false" onAction="#signIn" opacity="0.8" prefHeight="27.0" prefWidth="46.0" style="-fx-background-color: #F9C3F1; -fx-border-color: #EE82EE; -fx-border-radius: 7; -fx-background-radius: 7;" text="Вход" textFill="#93001b">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+      <Button fx:id="RegistrationButton" alignment="TOP_CENTER" layoutX="447.0" layoutY="283.0" mnemonicParsing="false" opacity="0.8" prefHeight="27.0" prefWidth="109.0" style="-fx-background-color: #F9C3F1; -fx-border-color: #EE82EE; -fx-border-radius: 7; -fx-background-radius: 7;" text="Регистрация" textFill="#93001b">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+      <Text fill="#930000" layoutX="447.0" layoutY="265.0" opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Забыли пароль?" textAlignment="CENTER" underline="true" wrappingWidth="108.80337524414062">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Text>
+      <TextField fx:id="phoneField" layoutX="424.0" layoutY="125.0" opacity="0.8" promptText="375⋆⋆⋆⋆⋆⋆⋆⋆⋆" style="-fx-background-color: #E6E6FA; -fx-border-color: #FF69B4; -fx-border-radius: 2;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></TextField>
+      <PasswordField fx:id="passwordField" layoutX="424.0" layoutY="159.0" opacity="0.8" promptText="Пароль" style="-fx-border-color: #FF69B4; -fx-background-color: #E6E6FA; -fx-border-radius: 2;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></PasswordField>
+      <ImageView fx:id="closeImage" fitHeight="30.0" fitWidth="30.0" focusTraversable="true" layoutX="555.0" layoutY="10.0" preserveRatio="true">
+         <image>
+            <Image url="@../resource/img/exitbutton.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Text fx:id="Address" layoutX="440.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Via Vittorio Veneto, 155, 00187 Roma RM, Италия" wrappingWidth="150.66666666666652">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="LocationImage" fitHeight="27.0" fitWidth="25.0" layoutX="412.0" layoutY="373.0">
+         <image>
+            <Image url="@../resource/img/marker.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="SupportAddress" layoutX="444.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="support@poetic.com" wrappingWidth="141.111328125">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="POETIC" fitHeight="100.0" fitWidth="315.0" layoutX="145.0" layoutY="6.0" opacity="0.88">
+         <image>
+            <Image url="@../resource/img/Poetic.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="SupportImage" fitHeight="27.0" fitWidth="25.0" layoutX="412.0" layoutY="412.0">
+         <image>
+            <Image url="@../resource/img/support.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="ForgotPasswordButton" layoutX="454.0" layoutY="247.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="95.0" text="Button">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fx:id="hideImage" fitHeight="30.0" focusTraversable="true" layoutX="517.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../resource/img/hidebutton.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="hideButton" layoutX="517.0" layoutY="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="30.0" prefWidth="30.0" text="Button">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="closeButton" layoutX="555.0" layoutY="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="30.0" prefWidth="30.0" text="Button">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text fx:id="errorText" fill="#420000" layoutX="418.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="167.0000000000001" />
+      <ImageView fx:id="snowImage" fitHeight="32.0" fitWidth="85.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#clickSnow" preserveRatio="true">
+         <image>
+            <Image url="@../resource/img/snow.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="hat" fitHeight="46.0" fitWidth="88.0" layoutX="145.0" layoutY="10.0" preserveRatio="true">
+         <image>
+            <Image url="@../resource/img/hat.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

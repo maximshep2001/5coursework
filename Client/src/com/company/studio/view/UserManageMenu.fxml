@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="532.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.studio.controllers.UserManageController">
+   <children>
+      <ImageView fx:id="BackgroundImage" blendMode="SRC_ATOP" fitHeight="532.0" fitWidth="907.0" opacity="0.55">
+         <image>
+            <Image url="@../resource/img/fon.png" />
+         </image>
+         <effect>
+            <Lighting diffuseConstant="1.49" specularConstant="1.68" specularExponent="20.31" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow color="#2743ab" height="72.88499999999999" radius="37.79625" width="80.3" />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#ffcdcd" />
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="96.0" fitWidth="287.0" layoutX="600.0" layoutY="50.0" opacity="0.88">
+         <image>
+            <Image url="@../resource/img/Poetic.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="10.0" layoutY="10.0">
+         <image>
+            <Image url="@../resource/img/backbutton.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Button fx:id="backButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="35.0" prefWidth="35.0" text="Button">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="119.0" fitWidth="73.0" layoutX="380.0" layoutY="20.0">
+         <image>
+            <Image url="@../resource/img/usermanage.png" />
+         </image>
+      </ImageView>
+      <Text fill="#3d0040" layoutX="463.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Управление пользователями" wrappingWidth="119.43365478515625">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="135.0" fitWidth="255.0" layoutX="348.0" layoutY="11.0">
+         <image>
+            <Image url="@../resource/img/ramkablack.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="SearchParametrField" layoutX="8.0" layoutY="117.0" onAction="#searchUser" opacity="0.8" prefHeight="31.0" prefWidth="287.0" promptText="🔎 Введите параметр поиска" style="-fx-border-color: #F76BC9; -fx-border-radius: 3; -fx-background-color: #FBF2F5;">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <TableView fx:id="UserTable" layoutX="8.0" layoutY="151.0" opacity="0.8" prefHeight="382.0" prefWidth="892.0" style="-fx-border-color: #462B82; -fx-background-color: #FBF2F5; -fx-border-radius: 3; -fx-background-radius: 3;">
+        <columns>
+          <TableColumn fx:id="ColumnID" prefWidth="36.0" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F;" text="ID" />
+          <TableColumn fx:id="ColumnName" prefWidth="97.33331680297852" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F;" text="Имя" />
+            <TableColumn fx:id="ColumnSurname" prefWidth="161.33335876464844" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F;" text="Фамилия" />
+            <TableColumn fx:id="ColumnPhone" prefWidth="173.99996948242188" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F;" text="Телефон" />
+            <TableColumn fx:id="ColumnEmail" minWidth="0.0" prefWidth="197.33328247070312" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F;" text="Email" />
+            <TableColumn fx:id="ColumnPassword" minWidth="0.0" prefWidth="120.6666259765625" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F;" text="Пароль" />
+            <TableColumn fx:id="ColumnRole" prefWidth="107.3333740234375" style="-fx-border-color: #462B82; -fx-background-color: #F1D1F5; -fx-background-radius: 3; -fx-border-radius: 3; -fx-text-fill: #46094F;" text="Роль" />
+        </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <Button layoutX="300.0" layoutY="117.0" mnemonicParsing="false" opacity="0.7" prefHeight="31.0" prefWidth="38.0" style="-fx-border-color: #462B82; -fx-border-radius: 3; -fx-background-color: #FF4040; -fx-background-radius: 3;" textAlignment="CENTER" textFill="#48005b">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="305.0" layoutY="119.0">
+         <image>
+            <Image url="@../resource/img/trash.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="300.0" layoutY="117.0" mnemonicParsing="false" onAction="#deleteUser" opacity="0.0" prefHeight="31.0" prefWidth="38.0" style="-fx-border-color: #462B82; -fx-border-radius: 3; -fx-background-color: #EFE8FF; -fx-background-radius: 3;" textAlignment="CENTER" textFill="#48005b">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="860.0" layoutY="10.0">
+         <image>
+            <Image url="@../resource/img/exitbutton.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="closeButton" layoutX="860.0" layoutY="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="35.0" prefWidth="35.0" text="Button">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="dateTime" layoutX="10.0" layoutY="82.0" prefHeight="30.0" prefWidth="301.0">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="810.0" layoutY="10.0">
+         <image>
+            <Image url="@../resource/img/hidebutton.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="hideButton" layoutX="810.0" layoutY="10.0" mnemonicParsing="false" opacity="0.0" prefHeight="35.0" prefWidth="35.0" text="Button" />
+      <ImageView fitHeight="130.0" fitWidth="236.0" layoutX="358.0" layoutY="14.0" pickOnBounds="true">
+         <image>
+            <Image url="@../resource/img/winter.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
